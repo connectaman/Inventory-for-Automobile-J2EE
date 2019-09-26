@@ -4,17 +4,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin Login</title>
+<title>User Login</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<%
+String status = (String)request.getAttribute("status");
+if(status!=null){
+%>
 
+	<center>
+	<div class="panel panel-danger">
+	<p><%=status %></p>
+	<%} %>
+	</div>
+	</center>
 <div class="wrapper">
-  <form class="form-signin">
-    <center><h2 class="form-signin-heading">Admin login</h2></center> <br>
+  <form action="UserLogin" method="POST" class="form-signin">
+    <center><h2 class="form-signin-heading">User login</h2></center> <br>
     <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" /> <br>
     <input type="password" class="form-control" name="password" placeholder="Password" required="" /><br>
     

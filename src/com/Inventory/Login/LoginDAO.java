@@ -21,9 +21,7 @@ public static boolean isUserValid(String name,String password) {
 		}
 	}catch(Exception e) {
 		e.printStackTrace();
-		return false;
 	}	
-	
 	return false;
 }
 	

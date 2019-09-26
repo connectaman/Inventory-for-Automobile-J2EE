@@ -11,7 +11,17 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<%
+String status = (String)request.getAttribute("status");
+if(status!=null){
+%>
 
+	<center>
+	<div class="panel panel-danger">
+	<p><%=status %></p>
+	<%} %>
+	</div>
+	</center>
 <div class="wrapper">
   <form action="UserLogin" method="POST" class="form-signin">
     <center><h2 class="form-signin-heading">User login</h2></center> <br>

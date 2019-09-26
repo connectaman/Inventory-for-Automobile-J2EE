@@ -1,6 +1,8 @@
 package com.Inventory.Login;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +39,9 @@ public class UserLogin extends HttpServlet {
 			response.sendRedirect("UserDashboard.jsp");
 		}
 		else {
-			response.sendRedirect("UserLogin.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("UserLogin.jsp");
+			request.setAttribute("status","Username or Password is Incorrect!");
+			dispatcher.forward(request, response);
 		}
 	}
 
